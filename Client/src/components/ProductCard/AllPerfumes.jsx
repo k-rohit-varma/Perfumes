@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Card from './Card'
+import Navbar from "./NavBar";
 
 const AllPerfumes = () => {
 
@@ -16,7 +17,9 @@ const AllPerfumes = () => {
     },[])
     
   return (
-    <div className="flex flex-wrap gap-6 justify-center p-5" >
+    <>
+    <Navbar/>
+        <div className="flex flex-wrap gap-6 p-5" >
         {
            st == 100 ? <h1>loading....</h1> : st != 200 ? <h1>Something went wrong</h1>:
 
@@ -27,6 +30,7 @@ const AllPerfumes = () => {
         }
         
     </div>
+    </>
   )
 }
 

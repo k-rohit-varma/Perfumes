@@ -1,7 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
+
 const Card = (props) => {
+    const navigate = useNavigate()
     const item = props.perfume;
+    function handleClick(perfumeDetails)
+    {
+        navigate("/fullDescription",{state :{product : perfumeDetails}})
+    }
     return (
-        <div className="p-5 flex ">
+       <>
+       
+         <div className="p-5 flex " onClick={()=>handleClick(item)} >
             <div className="w-64 bg-gradient-to-br from-purple-700 via-pink-600 to-red-500 rounded-3xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
                 <div className="text-white object-cover p-5">
                   
@@ -19,13 +29,14 @@ const Card = (props) => {
                     </div>
     
                     <div className="mt-4">
-                        <button className="w-full bg-white text-purple-700 font-semibold py-2 rounded-lg transition duration-300 hover:bg-purple-600 hover:text-white">
+                        <button className="w-full bg-white text-purple-700 font-semibold py-2 rounded-lg transition duration-300 hover:bg-purple-600 hover:text-white" onClick={()=> handleClick(item)} >
                             Buy Now
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+       </>
     );
 };
 

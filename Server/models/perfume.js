@@ -9,11 +9,7 @@ const perfumeSchema = mongoose.Schema({
     price: Number,
     piecesAvailable:Number,
     discount: Number,
-    comment: [{
-        type: mongoose.Schema.Types.ObjectId, // Allow multiple ObjectId references
-        ref: "comments", // Reference the comments collection
-        default: [] // Default to an empty array
-    }],
+    comment: [String],
     Image: String
 });
 
