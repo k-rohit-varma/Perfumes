@@ -29,7 +29,7 @@ const CallToActionBanner = () => {
       {/* Right Section: Image */}
       <div className="hidden lg:block">
         <img
-          src="https://files.oaiusercontent.com/file-TtF6VczGMZKRdBZWvv5E7Y?se=2025-01-25T05%3A13%3A27Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dd0f4778c-60ca-493f-b36b-a3f4f6d62621.webp&sig=DeWNVbJQktQ38YpcNCXxxyiXlp0fqzm73D2QfcYdvf4%3D"
+          src="https://astranzia.com/wp-content/uploads/2022/05/9267.jpg"
           alt="Perfume Collection"
           className="h-72 object-cover rounded-lg shadow-md"
         />

@@ -1,17 +1,27 @@
-const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/perfumeSeller')
+const mongoose = require('mongoose');
+require('dotenv').config(); 
 
-const perfumeSchema = mongoose.Schema({
-    name: String,
-    short_dir: String,
-    long_dir: String,
-    price: Number,
-    piecesAvailable:Number,
-    discount: Number,
-    comment: [String],
-    Image: String
+// MongoDB connection
+mongoose
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('Connected to MongoDB successfully!'))
+  .catch((error) => console.error('MongoDB connection error:', error));
+
+
+const perfumeSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  short_dir: { type: String, required: true },
+  long_dir: { type: String, required: true },
+  price: { type: Number, required: true },
+  piecesAvailable: { type: Number, default: 0 },
+  discount: { type: Number, default: 0 },
+  comment: [{ type: String }],
+  Image: { type: String },
 });
 
-
-module.exports = mongoose.model("perfume",perfumeSchema)
+// Export the model
+module.exports = mongoose.model('Perfume', perfumeSchema);

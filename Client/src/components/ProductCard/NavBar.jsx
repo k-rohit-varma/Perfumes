@@ -49,6 +49,20 @@ const Navbar = () => {
           >
             Products
           </NavLink>
+          {/*  */}
+          <NavLink
+            to="/addProduct"
+            className={({ isActive }) =>
+              `font-semibold ${
+                isActive
+                  ? "text-yellow-300 underline decoration-wavy"
+                  : "text-white hover:text-yellow-300"
+              } transition`
+            }
+          >
+            Add new Perfume
+          </NavLink>
+
         </div>
       </div>
 

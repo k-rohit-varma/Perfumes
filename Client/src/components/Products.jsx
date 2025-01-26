@@ -4,9 +4,7 @@ import AllPerfumes from "./ProductCard/AllPerfumes"
 
 const Products = () => {
   return (
-    <div>
-
-        
+    <div>   
         <AllPerfumes/>
     </div>
   )

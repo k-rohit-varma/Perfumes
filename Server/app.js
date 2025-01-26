@@ -2,12 +2,12 @@ const express = require("express");
 const productRoutes = require("./routes/productsRouter"); // Adjust the path as needed
 const cors = require('cors')
 const app = express();
+require('dotenv').config();
 
 // Middleware to parse JSON
 app.use(express.json());
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
-
 
 app.use("/products", productRoutes);
 
